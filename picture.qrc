@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/pic">
+        <file>no-under18.png</file>
+        <file>yes-out.png</file>
+        <file>no-18.png</file>
+        <file>yes-in.png</file>
+    </qresource>
+</RCC>
