@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "vaap.h"
+#include "testwelcome.h"
 
 namespace Ui {
 class VirginiaMain;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::VirginiaMain *ui;
     VAAP *vaap;
+    Testwelcome *tw;
 };
 
 #endif // VIRGINIAMAIN_H

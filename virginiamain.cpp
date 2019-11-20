@@ -1,6 +1,7 @@
 #include "virginiamain.h"
 #include "ui_virginiamain.h"
 
+
 VirginiaMain::VirginiaMain(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::VirginiaMain)
@@ -18,4 +19,11 @@ void VirginiaMain::on_pushButton_clicked()
     vaap = new VAAP();
     vaap->show();
     vaap->setWindowTitle("VirginiaApplicationProcess");
+}
+
+void VirginiaMain::on_pushButton_3_clicked()
+{
+    tw = new Testwelcome();
+    tw->show();
+    destroy();
 }

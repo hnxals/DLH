@@ -2,6 +2,8 @@
 #include "ui_menu.h"
 #include <QString>
 
+QString globaldata;
+
 Menu::Menu(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Menu)
@@ -24,6 +26,7 @@ void Menu::on_pushButton_clicked()
         Virginia = new VirginiaMain(this);
         Virginia->show();
         Virginia->setWindowTitle("Virginia");
+        globaldata = "VA";
         destroy();
     }
     else{

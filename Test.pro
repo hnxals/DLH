@@ -20,6 +20,8 @@ SOURCES += \
     mainwindow.cpp \
     menu.cpp \
     notavailable.cpp \
+    testsimulator.cpp \
+    testwelcome.cpp \
     vaap.cpp \
     virginiamain.cpp
 
@@ -27,6 +29,8 @@ HEADERS += \
     mainwindow.h \
     menu.h \
     notavailable.h \
+    testsimulator.h \
+    testwelcome.h \
     vaap.h \
     virginiamain.h
 
@@ -34,6 +38,8 @@ FORMS += \
     mainwindow.ui \
     menu.ui \
     notavailable.ui \
+    testsimulator.ui \
+    testwelcome.ui \
     vaap.ui \
     virginiamain.ui
 
