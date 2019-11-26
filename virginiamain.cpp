@@ -25,5 +25,4 @@ void VirginiaMain::on_pushButton_3_clicked()
 {
     tw = new Testwelcome();
     tw->show();
-    destroy();
 }

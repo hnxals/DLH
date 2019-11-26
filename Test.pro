@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,6 +21,7 @@ SOURCES += \
     mainwindow.cpp \
     menu.cpp \
     notavailable.cpp \
+    testresult.cpp \
     testsimulator.cpp \
     testwelcome.cpp \
     vaap.cpp \
@@ -29,6 +31,7 @@ HEADERS += \
     mainwindow.h \
     menu.h \
     notavailable.h \
+    testresult.h \
     testsimulator.h \
     testwelcome.h \
     vaap.h \
@@ -38,6 +41,7 @@ FORMS += \
     mainwindow.ui \
     menu.ui \
     notavailable.ui \
+    testresult.ui \
     testsimulator.ui \
     testwelcome.ui \
     vaap.ui \
@@ -51,4 +55,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 RESOURCES += \
+    db.qrc \
     picture.qrc

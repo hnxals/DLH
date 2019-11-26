@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/database"/>
+    <qresource prefix="/">
+        <file>test.db</file>
+    </qresource>
+</RCC>

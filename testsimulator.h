@@ -5,6 +5,9 @@
 #include <QButtonGroup>
 #include <QRadioButton>
 #include <QLabel>
+#include <QtSql>
+#include <QPixmap>
+#include <testresult.h>
 
 namespace Ui {
 class Testsimulator;
@@ -14,9 +17,12 @@ class Testsimulator : public QMainWindow
 {
     Q_OBJECT
 
+
 public:
     explicit Testsimulator(QWidget *parent = nullptr);
     ~Testsimulator();
+
+
 
 private slots:
 
@@ -35,9 +41,12 @@ private:
     QLabel *analysis;
     QLabel *question;
     QLabel *youranswer;
-    int totalscore,score1,score2;
-    int qnum;
-
+    QLabel *picture;
+    int score1,score2,qnum;
+    QPixmap img;
+    QSqlDatabase db;
+    int trueanswernum;
+    QString qanalysis;
 };
 
 #endif // TESTSIMULATOR_H
