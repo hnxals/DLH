@@ -10,5 +10,7 @@ NotAvailable::NotAvailable(QWidget *parent) :
 
 NotAvailable::~NotAvailable()
 {
+
     delete ui;
+
 }

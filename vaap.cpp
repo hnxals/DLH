@@ -37,21 +37,29 @@ void VAAP::on_pushButton_clicked()
     QImage *img=new QImage;
     if(ui->comboBox_license->currentIndex()==0 && ui->comboBox_2->currentIndex()==0){
         img->load(":/new/pic/yes-in.png");
+        img->scaled(ui->label->size(), Qt::KeepAspectRatio);
+        ui->label_3->setScaledContents(true);
         ui->label_3->clear();
         ui->label_3 ->setPixmap(QPixmap::fromImage(*img));
     }
     else if(ui->comboBox_license->currentIndex()==0 && ui->comboBox_2->currentIndex()==1){
         img->load(":/new/pic/yes-out.png");
+        img->scaled(ui->label->size(), Qt::KeepAspectRatio);
+        ui->label_3->setScaledContents(true);
         ui->label_3->clear();
         ui->label_3 ->setPixmap(QPixmap::fromImage(*img));
     }
     else if(ui->comboBox_license->currentIndex()==1 && ui->comboBox_2->currentIndex()==0){
         img->load(":/new/pic/no-under18.png");
+        img->scaled(ui->label->size(), Qt::KeepAspectRatio);
+        ui->label_3->setScaledContents(true);
         ui->label_3->clear();
         ui->label_3 ->setPixmap(QPixmap::fromImage(*img));
     }
     else if(ui->comboBox_license->currentIndex()==1 && ui->comboBox_2->currentIndex()==1){
         img->load(":/new/pic/no-18.png");
+        img->scaled(ui->label->size(), Qt::KeepAspectRatio);
+        ui->label_3->setScaledContents(true);
         ui->label_3->clear();
         ui->label_3 ->setPixmap(QPixmap::fromImage(*img));
     }
@@ -60,5 +68,8 @@ void VAAP::on_pushButton_clicked()
         error -> setText("Please choose the choice!");
         error->setIcon(QMessageBox::Warning);
         error ->exec();
+        delete error;
     }
+    delete img;
+
 }

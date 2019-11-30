@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete menu;
     delete ui;
 }
 
@@ -18,9 +19,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 
-    menu = new Menu(this);
-    menu->show();
+    menu = new Menu;
+    menu->setAttribute(Qt::WA_DeleteOnClose, true);
     menu->setWindowTitle("Driver's License Helper");
+    menu->show();
     destroy();
 
 }

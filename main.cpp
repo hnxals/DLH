@@ -3,14 +3,15 @@
 #include <QApplication>
 #include <QSqlDatabase>
 
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow w;
-    w.show();
-    w.setWindowTitle("Driver's License Helper");
-
-    QDir::setCurrent(a.applicationDirPath());
+    MainWindow *w= new MainWindow;
+    w->setWindowTitle("Driver's License Helper");
+    w->show();
     return a.exec();
+
 }
+

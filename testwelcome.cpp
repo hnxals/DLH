@@ -11,6 +11,7 @@ Testwelcome::Testwelcome(QWidget *parent) :
 
 Testwelcome::~Testwelcome()
 {
+    delete ts;
     delete ui;
 }
 

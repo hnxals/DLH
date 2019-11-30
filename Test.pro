@@ -4,6 +4,7 @@ QT       += sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+CONFIG += resources_big
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -25,6 +26,7 @@ SOURCES += \
     testsimulator.cpp \
     testwelcome.cpp \
     vaap.cpp \
+    valearn.cpp \
     virginiamain.cpp
 
 HEADERS += \
@@ -35,6 +37,7 @@ HEADERS += \
     testsimulator.h \
     testwelcome.h \
     vaap.h \
+    valearn.h \
     virginiamain.h
 
 FORMS += \
@@ -45,6 +48,7 @@ FORMS += \
     testsimulator.ui \
     testwelcome.ui \
     vaap.ui \
+    valearn.ui \
     virginiamain.ui
 
 # Default rules for deployment.
@@ -55,5 +59,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 RESOURCES += \
-    db.qrc \
     picture.qrc

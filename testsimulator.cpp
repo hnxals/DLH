@@ -30,7 +30,8 @@ Testsimulator::Testsimulator(QWidget *parent) :
     choiceGroup->addButton(ui->radioButton_C,3);
     choiceGroup->addButton(ui->radioButton_D,4);
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("C:\\Users\\TF\\Desktop\\QT\\Test\\test.db");
+    QString dbfile = QDir::currentPath() + "/test.db";
+    db.setDatabaseName(dbfile);
     db.open();
     QSqlQuery query(db);
     query.exec("SELECT * FROM aquestion order By RANDOM() LIMIT 1");
@@ -55,6 +56,16 @@ Testsimulator::Testsimulator(QWidget *parent) :
 
 Testsimulator::~Testsimulator()
 {
+    delete choiceGroup;
+    delete choiceA;
+    delete choiceB;
+    delete choiceC;
+    delete choiceD;
+    delete trueanswer;
+    delete analysis;
+    delete question;
+    delete youranswer;
+    delete picture;
     delete ui;
 }
 

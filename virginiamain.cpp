@@ -11,7 +11,11 @@ VirginiaMain::VirginiaMain(QWidget *parent) :
 
 VirginiaMain::~VirginiaMain()
 {
+    delete vaap;
+    delete tw;
+    delete vl;
     delete ui;
+    qApp->quit();
 }
 
 void VirginiaMain::on_pushButton_clicked()
@@ -25,4 +29,10 @@ void VirginiaMain::on_pushButton_3_clicked()
 {
     tw = new Testwelcome();
     tw->show();
+}
+
+void VirginiaMain::on_pushButton_2_clicked()
+{
+    vl = new valearn();
+    vl->show();
 }
