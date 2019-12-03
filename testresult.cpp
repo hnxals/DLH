@@ -23,7 +23,7 @@ void testresult::sendData(QString data1, QString data2)
             ui->label_state->setText("Sorry, You failed because the your general knowledge questions wrong too much!");
     }
     else
-        ui->label_state->setText("Sorry, You failed because the your traffoc sign questions wrong too much!");
+        ui->label_state->setText("Sorry, You failed because the your traffic sign questions wrong too much!");
     ui->label_score1->setText(data1);
     ui->label_score2->setText(data2);
 }
