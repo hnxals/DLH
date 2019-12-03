@@ -14,10 +14,7 @@ Menu::Menu(QWidget *parent) :
 
 Menu::~Menu()
 {
-    delete Virginia;
-    delete na;
     delete ui;
-    qApp->quit();
 }
 
 
@@ -26,15 +23,16 @@ void Menu::on_pushButton_clicked()
 {
     if(ui->Statename->currentIndex()==0){
         Virginia = new VirginiaMain;
-        Virginia->show();
         Virginia->setWindowTitle("Virginia");
+        Virginia->show();
+        Virginia->setAttribute(Qt::WA_DeleteOnClose, true);
         globaldata = "VA";
         destroy();
     }
     else{
         na = new NotAvailable;
-        na->show();
         na->setWindowTitle("NotAvailable");
+        na->show();
     }
 
 

@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     MainWindow *w= new MainWindow;
     w->setWindowTitle("Driver's License Helper");
     w->show();
+    a.connect( &a,SIGNAL(lastWindowClosed()),&a,SLOT(quit()));
     return a.exec();
 
 }

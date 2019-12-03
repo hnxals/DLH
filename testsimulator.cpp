@@ -38,8 +38,8 @@ Testsimulator::Testsimulator(QWidget *parent) :
     query.next();
     question->setText(query.value(1).toString());
     img.loadFromData(query.value(2).toByteArray());
-    img.scaled(ui->label->size(), Qt::KeepAspectRatio);
-    picture->setScaledContents(true);
+//    img.scaled(ui->label->size(), Qt::KeepAspectRatio);
+//    picture->setScaledContents(true);
     picture->setPixmap(img);
     ui->radioButton_A->setText(query.value(3).toString());
     ui->radioButton_B->setText(query.value(4).toString());
@@ -47,6 +47,7 @@ Testsimulator::Testsimulator(QWidget *parent) :
     ui->radioButton_D->setText(query.value(6).toString());
     trueanswernum=query.value(7).toInt();
     qanalysis = query.value(8).toString();
+    qanalysis = "Explanation:   " + qanalysis;
     qnum = 1;
     ui->label_qnum->setText("This is question No." + QString::number(qnum, 10));
     score1 = 0;
@@ -56,16 +57,16 @@ Testsimulator::Testsimulator(QWidget *parent) :
 
 Testsimulator::~Testsimulator()
 {
-    delete choiceGroup;
-    delete choiceA;
-    delete choiceB;
-    delete choiceC;
-    delete choiceD;
-    delete trueanswer;
-    delete analysis;
-    delete question;
-    delete youranswer;
-    delete picture;
+//    delete choiceGroup;
+//    delete choiceA;
+//    delete choiceB;
+//    delete choiceC;
+//    delete choiceD;
+//    delete trueanswer;
+//    delete analysis;
+//    delete question;
+//    delete youranswer;
+//    delete picture;
     delete ui;
 }
 
@@ -132,6 +133,8 @@ void Testsimulator::on_pushButton_next_clicked()
         testresult *tr = new testresult;
         tr->sendData(QString::number(score1, 10), QString::number(score2, 10));
         tr->show();
+        tr->setWindowTitle("DLH-Virginia");
+        tr->setAttribute(Qt::WA_DeleteOnClose, true);
         destroy();
     }
     trueanswer->clear();

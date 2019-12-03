@@ -4,5 +4,8 @@
         <file>yes-out.png</file>
         <file>no-18.png</file>
         <file>yes-in.png</file>
+        <file>road.jpg</file>
+        <file>car.png</file>
+        <file>buttton.png</file>
     </qresource>
 </RCC>

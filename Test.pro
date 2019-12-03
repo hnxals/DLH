@@ -60,3 +60,4 @@ DISTFILES +=
 
 RESOURCES += \
     picture.qrc
+RC_ICONS = "car.ico"
