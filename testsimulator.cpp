@@ -107,8 +107,7 @@ void Testsimulator::on_pushButton_submit_clicked()
     default:
         break;
     }
-    QString analysistext; //题目分析赋值
-    analysis->setText(analysistext);
+    analysis->setText(qanalysis);
     if(ans==trueanswernum){
         if(qnum<=10)
             score1++;
@@ -120,7 +119,7 @@ void Testsimulator::on_pushButton_submit_clicked()
 
 void Testsimulator::on_pushButton_next_clicked()
 {
-    if(qnum==5){
+    if(qnum==35){
         testresult *tr = new testresult;
         tr->sendData(QString::number(score1, 10), QString::number(score2, 10));
         tr->show();
