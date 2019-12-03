@@ -65,7 +65,7 @@ void VAAP::on_pushButton_clicked()
     }
     else{
         QMessageBox *error = new QMessageBox();
-        error -> setText("Please choose the choice!");
+        error -> setText("Please make a choice!");
         error->setIcon(QMessageBox::Warning);
         error ->exec();
         delete error;

@@ -73,53 +73,62 @@ Testsimulator::~Testsimulator()
 
 void Testsimulator::on_pushButton_submit_clicked()
 {
-    int ans = choiceGroup->checkedId();
-    qDebug()<<trueanswernum;
-    switch (trueanswernum) {
-    case 1:
-        trueanswer->setText("True answer: A");
-        break;
-    case 2:
-        trueanswer->setText("True answer: B");
-        break;
-    case 3:
-        trueanswer->setText("True answer: C");
-        break;
-    case 4:
-        trueanswer->setText("True answer: D");
-        break;
-    default:
-        break;
+    if(choiceGroup->checkedButton()!=NULL){
+        int ans = choiceGroup->checkedId();
+        qDebug()<<trueanswernum;
+        switch (trueanswernum) {
+        case 1:
+            trueanswer->setText("True answer: A");
+            break;
+        case 2:
+            trueanswer->setText("True answer: B");
+            break;
+        case 3:
+            trueanswer->setText("True answer: C");
+            break;
+        case 4:
+            trueanswer->setText("True answer: D");
+            break;
+        default:
+            break;
+        }
+        switch (ans) {
+        case 1:
+            youranswer->setText("Your answer: A");
+            break;
+        case 2:
+            youranswer->setText("Your answer: B");
+            break;
+        case 3:
+            youranswer->setText("Your answer: C");
+            break;
+        case 4:
+            youranswer->setText("Your answer: D");
+            break;
+        default:
+            break;
+        }
+        analysis->setText(qanalysis);
+        if(ans==trueanswernum){
+            if(qnum<=10)
+                score1++;
+            else
+                score2++;
+        }
+        ui->pushButton_submit->hide();
     }
-    switch (ans) {
-    case 1:
-        youranswer->setText("Your answer: A");
-        break;
-    case 2:
-        youranswer->setText("Your answer: B");
-        break;
-    case 3:
-        youranswer->setText("Your answer: C");
-        break;
-    case 4:
-        youranswer->setText("Your answer: D");
-        break;
-    default:
-        break;
+    else{
+        QMessageBox *error = new QMessageBox();
+        error -> setText("Please make a choice!");
+        error->setIcon(QMessageBox::Warning);
+        error ->exec();
+        delete error;
     }
-    analysis->setText(qanalysis);
-    if(ans==trueanswernum){
-        if(qnum<=10)
-            score1++;
-        else
-            score2++;
-    }
-    ui->pushButton_submit->setDisabled(true);
 }
 
 void Testsimulator::on_pushButton_next_clicked()
 {
-    if(qnum==35){
+    if(qnum==40){
         testresult *tr = new testresult;
         tr->sendData(QString::number(score1, 10), QString::number(score2, 10));
         tr->show();
@@ -128,7 +137,7 @@ void Testsimulator::on_pushButton_next_clicked()
     trueanswer->clear();
     analysis->clear();
     youranswer->clear();
-    ui->pushButton_submit->setEnabled(true);
+    ui->pushButton_submit->show();
     QAbstractButton* checked = choiceGroup->checkedButton();
     choiceGroup->setExclusive(false);
     checked->setChecked(false);
